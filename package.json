@@ -1,0 +1,27 @@
+{
+  "name": "server_side",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+  "client": "npm start --prefix frontend",
+  "server": "nodemon backend/server.js",
+  "dev": "concurrently \"npm run client\" \"npm run server\"",
+  "build": "npm run build --prefix frontend"
+}
+,
+  "keywords": [],
+  "author": "arun singh",
+  "license": "ISC",
+  "description": "It is my personal website.",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.15.1"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
