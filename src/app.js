@@ -11,10 +11,10 @@ const app = express();
 dotenv.config();
 db_connection(process.env.DB_URL);
 
-// app.use(express.static(path.join(__dirname, './view/build')));
-// app.get('/', (req, res) => {
-//   res.sendFile(path.join(__dirname, './view/build/index.html'));
-// });
+app.use(express.static(path.join(__dirname, './view/build')));
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, './view/build/index.html'));
+});
 
 app.use(cors());
 app.use(express.json());
