@@ -11,9 +11,6 @@ const {
 const { verify_token } = require("../middleware/middleware");
 
 const router = express.Router();
-router.get("/", (req, res) => {
-  res.end("hello it is arun API.");
-});
 
 router.post("/register", createUser);
 router.post("/login", get_user);
