@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const work_schema = mongoose.Schema({
-    image:{
+    experience_image:{
         type:String,
     },
     tile:{

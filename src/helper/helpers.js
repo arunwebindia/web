@@ -9,6 +9,6 @@ async function encrypt_password(password) {
   async function verifyPassword(password, hashedPassword) {
        const match = await bcrypt.compare(password, hashedPassword);
        return match;
-     }
+  }
 
 module.exports = {encrypt_password,verifyPassword}
