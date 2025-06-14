@@ -34,8 +34,8 @@ const create_contact = async (req, res) => {
 
 const get_contact = async (req, res) => {
   try {
-    const all_contact = await contact_model.find();
-    if (!all_contact)
+    const all_contact = await contact_model.find({});
+    if (all_contact.legth > 0)
       res
         .status(401)
         .json({ status: true, message: "No found any  contact information" });
@@ -63,7 +63,7 @@ const get_contact_by_id = async (req, res) => {
 
 const delete_contact = async (req, res) => {
   try {
-    let { id } = req.body;
+    let { id } = req.params;
     let contact_info = await contact_model.findByIdAndDelete({ _id: id });
     if (!contact_info)
       res.status(401).json({ status: true, message: "User not deleted." });

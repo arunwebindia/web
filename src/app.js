@@ -11,6 +11,7 @@ const service_router = require('./routers/services.router');
 const skill_router = require('./routers/skill.router');
 const social_router = require('./routers/social.router');
 const work_router = require('./routers/working.router');
+const visit_router = require('./routers/visitCounter.router')
 
 const app = express();
 dotenv.config();
@@ -27,6 +28,7 @@ app.use('/api/v1/skill',skill_router);
 app.use('/api/v1/social',social_router);
 app.use('/api/v1/user',user);
 app.use('/api/v1/work',work_router);
+app.use('/api/v1/visit',visit_router)
 
 app.use(express.static(path.join(__dirname, './view/build')));
 app.use('/upload', express.static(path.join(__dirname, '../public/image')));
